@@ -87,7 +87,7 @@ async def run():
             proxies_in = [line.strip() for line in f if line.strip()]
         if not proxies_in: raise FileNotFoundError
     except FileNotFoundError:
-        print(f"{E}'proxies.txt' is missing or empty. Please add http proxies cuz dude i don't want your ip to get banned so proxies are must .")
+        print(f"{E}'proxies.txt' is missing or empty. Please add http proxies.")
         return
 
     async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(ssl=False)) as s:
@@ -100,7 +100,7 @@ async def run():
             print(f"{E}No working proxies found. Can't continue.")
             return
 
-        print(f"{F}{len(proxies)}{W} proxies are live. Starting your work thamja jara...")
+        print(f"{F}{len(proxies)}{W} proxies are live. Starting the work so thamja jara...")
         print(f'{E}-----------------------------------------------{W}')
         
         stats = {'checked': 0, 'hits': 0}
